@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Playwrite+CO+Guides&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scene">
+        <div class="moon"></div>
+        <img src="forest.png" class="forest" alt="Forest background">
+    </div>
+
+    <div class="weather-container">
+        <h1>Weather web</h1>
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button onclick="getWeather()">Search</button>
+        </div>
+        <div id="weather-info">
+            <h2 id="city-name"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <p id="humidity"></p>
+            <p id="wind-speed"></p>
+        </div>
+        <div id="error-message"></div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
