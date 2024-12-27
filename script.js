@@ -23,7 +23,7 @@ i++
 stars();
 
 
-const apiKey = "c42bf60bac87c3376db91b88b68fdef3"; 
+const apiKey = ""; 
 const cityInput = document.getElementById("city-input");
 const cityName = document.getElementById("city-name");
 const temperature = document.getElementById("temperature");
@@ -88,7 +88,10 @@ function clearWeatherInfo() {
     windSpeed.textContent = "";
     document.getElementById("weather-info").innerHTML = ''; // 
 }
-
+   const searchBtn = document.querySelector("#search-btn");
+searchBtn.addEventListener("click", () => {
+    getWeather();
+});
 
 
 
