@@ -1,149 +1,277 @@
-*
-{
-margin: auto;
-padding: auto;
-box-sizing: border-box;
-
+* {
+  margin: auto;
+  padding: auto;
+  box-sizing: border-box;
 }
+
 body, html {
-
-    height: 100%;
-    overflow: 100%;
+  height: 100%;
+  overflow: 100%;
 }
+
 
 .scene {
-
-position: relative;
-height: 55vw;
-width: 200vh;
-background: linear-gradient(#111425 , #3751e0);
-overflow: hidden;
-background-attachment: fixed;
-
+  position: relative;
+  height: 55vw;
+  width: 200vh;
+  background: linear-gradient(#111425, #3751e0);
+  overflow: hidden;
+  background-attachment: fixed;
 }
-.moon {
-position: absolute;
-top: 10px;
-left: 40px;
-width: 100px;
-height: 100px;
-background: #fff;
-border-radius: 50%;
-z-index: 2;
-box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.8);
-filter: blur(1.5px);
 
+.moon {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.8);
+  filter: blur(1.5px);
 }
 .moon:after {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 15px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: linear-gradient(#111425 , #3751e0); 
-    background-attachment: fixed;
-    }
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(#111425, #3751e0);
+  background-attachment: fixed;
+}
 
-    .forest {
-        position: absolute;
-        bottom: 0;
-        left: -40px;
-      
-        width: 100%; 
-        height: auto; 
-        z-index: 1; 
-        object-fit: cover; 
-        transform: scale(1.2);
-    }
+.forest {
+  position: absolute;
+  bottom: 0;
+  left: -40px;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  object-fit: cover;
+  transform: scale(1.2);
+}
 
-    .scene i {
-position: absolute;
-background: white;
-border-radius: 50%;
-width: 5px;
-height: 5px;
-animation: animate linear infinite;
-opacity: 0.8;
-    }
-    @keyframes animate {
-             0% {
-opacity: 0;
-transform: translateY(0);
+.scene i {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  animation: animate linear infinite;
+  opacity: 0.8;
+}
 
-             }
-             10% , 90% {
+@keyframes animate {
+  0% {
+      opacity: 0;
+      transform: translateY(0);
+  }
+  10%, 90% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-100px);
+  }
+}
 
-                opacity: 1;
+h1 {
+  font-family: 'Itim', sans-serif;
+  padding: 50px;
+}
 
-             }
 
-             100% {
-                opacity: 0;
-                transform: translateY(-100px);
-                
-                             }
-                
+.weather-container {
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 10;
+}
 
-    }   
-    
-    h1 {
-         
-            font-family: 'Itim', sans-serif;
-            padding: 50px;
-        
-    }
+.search-box {
+  margin-bottom: 20px;
+}
 
-    .weather-container {
-        padding: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        text-align: center;
-        z-index: 10;
-    }
-    .search-box {
-        margin-bottom: 20px; }
-        #city-input {
-            padding: 10px;
-            font-size: 16px;
-            width: 200px;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-        
+#city-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
 button {
- padding: 10px 20px;
- background-color: #3751e0;
- color: white;
- border: none;
- border-radius: 5px;
-cursor: pointer;
- }
- button:hover {
-    background-color: #3c4e99;
+  padding: 10px 20px;
+  background-color: #3751e0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3c4e99;
 }
 
 #weather-info {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 h2 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 p {
-    font-size: 18px;
+  font-size: 18px;
 }
-
 
 #error-message {
-    color: red;
-    font-size: 18px;
+  color: red;
+  font-size: 18px;
 }
+
+@media (max-width: 600px) {
+  .scene {
+      height: 75vw;
+      width: 150vh;
+  }
+
+  .moon {
+      top: 5px;
+      left: 30px;
+      width: 80px;
+      height: 80px;
+  }
+
+  .weather-container {
+      font-size: 14px;
+      padding: 5px;
+  }
+
+  #city-input {
+      width: 150px;
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  h1 {
+      font-size: 18px;
+  }
+
+  h2 {
+      font-size: 20px;
+  }
+
+  p {
+      font-size: 16px;
+  }
+
+  .forest {
+      transform: scale(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .scene {
+      height: 60vw;
+      width: 180vh;
+  }
+
+  .moon {
+      top: 10px;
+      left: 50px;
+      width: 90px;
+      height: 90px;
+  }
+
+  .weather-container {
+      font-size: 16px;
+      padding: 8px;
+  }
+
+  #city-input {
+      width: 180px;
+      font-size: 15px;
+  }
+
+  button {
+      font-size: 16px;
+      padding: 9px 18px;
+  }
+
+  h1 {
+      font-size: 22px;
+  }
+
+  h2 {
+      font-size: 22px;
+  }
+
+  p {
+      font-size: 17px;
+  }
+
+  .forest {
+      transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1025px) {
+  .scene {
+      height: 55vw;
+      width: 200vh;
+  }
+
+  .moon {
+      top: 10px;
+      left: 40px;
+      width: 100px;
+      height: 100px;
+  }
+
+  .weather-container {
+      font-size: 18px;
+      padding: 10px;
+  }
+
+  #city-input {
+      width: 200px;
+      font-size: 16px;
+  }
+
+  button {
+      font-size: 18px;
+      padding: 10px 20px;
+  }
+
+  h1 {
+      font-size: 28px;
+  }
+
+  h2 {
+      font-size: 24px;
+  }
+
+  p {
+      font-size: 18px;
+  }
+
+  .forest {
+      transform: scale(1.2);
+  }
+}
+
 
 
 
